@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include mrrocky *.css
+recursive-include mrrocky *.csv
+recursive-include mrrocky *.html
+recursive-include mrrocky *.ico
+recursive-include mrrocky *.js
+recursive-include mrrocky *.json
+recursive-include mrrocky *.md
+recursive-include mrrocky *.png
+recursive-include mrrocky *.py
+recursive-include mrrocky *.svg
+recursive-include mrrocky *.txt
+recursive-exclude mrrocky *.pyc
