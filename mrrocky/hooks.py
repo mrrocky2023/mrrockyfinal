@@ -1,11 +1,11 @@
 from . import __version__ as app_version
 
 app_name = "mrrocky"
-app_title = "mrrocky"
-app_publisher = "l"
-app_description = "test selenium"
-app_email = "l"
-app_license = "l"
+app_title = "MrRocky"
+app_publisher = "Jorge Devia"
+app_description = "Modulo de Selenium Script"
+app_email = "jorged94@beatrizsierrra.net"
+app_license = "MIT"
 
 # Includes in <head>
 # ------------------
@@ -56,8 +56,8 @@ app_license = "l"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "mrrocky.utils.jinja_methods",
-# 	"filters": "mrrocky.utils.jinja_filters"
+#	"methods": "mrrocky.utils.jinja_methods",
+#	"filters": "mrrocky.utils.jinja_filters"
 # }
 
 # Installation
@@ -83,11 +83,11 @@ app_license = "l"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+#	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # DocType Class
@@ -95,7 +95,7 @@ app_license = "l"
 # Override standard doctype classes
 
 # override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
+#	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
 # Document Events
@@ -103,33 +103,38 @@ app_license = "l"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+#	"*": {
+#		"on_update": "method",
+#		"on_cancel": "method",
+#		"on_trash": "method"
 #	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"mrrocky.tasks.all"
-# 	],
-# 	"daily": [
-# 		"mrrocky.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"mrrocky.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"mrrocky.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"mrrocky.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "cron": {
+		"15 * * * *": [
+			"mrrocky.tasks.cron"
+		]
+	}
+#	"all": [
+#		"mrrocky.tasks.cron"
+#	]
+#	"daily": [
+#		"mrrocky.tasks.daily"
+#	],
+#	"hourly": [
+#		"mrrocky.tasks.hourly"
+#	],
+#	"weekly": [
+#		"mrrocky.tasks.weekly"
+#	],
+#    "monthly": [
+#        "mrrocky.tasks.monthly"
+#    ]
+}
 
 # Testing
 # -------
@@ -140,14 +145,14 @@ app_license = "l"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "mrrocky.event.get_events"
+#	"frappe.desk.doctype.event.event.get_events": "mrrocky.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "mrrocky.task.get_dashboard_data"
+#	"Task": "mrrocky.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -159,37 +164,29 @@ app_license = "l"
 # --------------------
 
 # user_data_fields = [
-# 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_3}",
-# 		"strict": False,
-# 	},
-# 	{
-# 		"doctype": "{doctype_4}"
-# 	}
+#	{
+#		"doctype": "{doctype_1}",
+#		"filter_by": "{filter_by}",
+#		"redact_fields": ["{field_1}", "{field_2}"],
+#		"partial": 1,
+#	},
+#	{
+#		"doctype": "{doctype_2}",
+#		"filter_by": "{filter_by}",
+#		"partial": 1,
+#	},
+#	{
+#		"doctype": "{doctype_3}",
+#		"strict": False,
+#	},
+#	{
+#		"doctype": "{doctype_4}"
+#	}
 # ]
 
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
-# 	"mrrocky.auth.validate"
+#	"mrrocky.auth.validate"
 # ]
-
-# Translation
-# --------------------------------
-
-# Make link fields search translated document names for these DocTypes
-# Recommended only for DocTypes which have limited documents with untranslated names
-# For example: Role, Gender, etc.
-# translated_search_doctypes = []
