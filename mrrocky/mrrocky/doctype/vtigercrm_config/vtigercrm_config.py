@@ -10,12 +10,14 @@ from datetime import datetime
 from urllib.parse import urlencode
 
 class VTigerCRMConfig(Document):
+	def autoname(self):
+		self.name = self.path + ':' + self.username
 
 	def on_update(self):
 		token: str
 		values = {'operation': 'getchallenge', 'username': self.username}
 		params = urlencode(values)
-		url = self.endpoint + "/webservice.php?" + params
+		url = 'http://' + self.host + '/' + self.path + '/webservice.php?' + params
 		response = requests.get(url)
 		token = response.json()['result']['token']
 		tempkey = (token + self.accesskey).encode('utf-8')
@@ -35,7 +37,6 @@ class VTigerCRMConfig(Document):
 		response = requests.request("POST", url, data=payload, headers=headers)
 		if response.json()['success'] == True:
 			self.sessionname = response.json()['result']['sessionName']
-			msgprint("sessionName: " + self.sessionname)
 		else:
 			msgprint(
 				msg=response.json()['error']['message'],

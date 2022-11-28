@@ -5,24 +5,17 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "endpoint",
+  "host",
+  "column_break_2",
+  "path",
+  "section_break_4",
   "username",
+  "column_break_6",
   "accesskey",
+  "section_break_8",
   "sessionname"
  ],
  "fields": [
-  {
-   "fieldname": "endpoint",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "End Point",
-   "reqd": 1,
-   "search_index": 1
-  },
   {
    "fieldname": "username",
    "fieldtype": "Data",
@@ -36,12 +29,9 @@
   },
   {
    "fieldname": "accesskey",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "in_filter": 1,
    "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "Access Key",
    "reqd": 1
   },
@@ -50,11 +40,46 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Session Name"
+  },
+  {
+   "fieldname": "host",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Host",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "path",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Path",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-24 12:09:51.865147",
+ "modified": "2022-11-26 18:20:27.060483",
  "modified_by": "Administrator",
  "module": "mrrocky",
  "name": "VTigerCRM Config",

@@ -1,0 +1,64 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"VtigerCRM Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Field Mapping\",\"col\":3}}]",
+ "creation": "2022-11-26 16:26:35.777030",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "label": "VTigerCRM",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Config",
+   "link_count": 0,
+   "link_to": "VTigerCRM Config",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Colombia",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Fields Map",
+   "link_count": 0,
+   "link_to": "VTigerCRM Field",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "Colombia",
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-11-27 20:23:41.784946",
+ "modified_by": "Administrator",
+ "module": "mrrocky",
+ "name": "VTigerCRM",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 31.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "Dashboard",
+   "label": "VtigerCRM Settings",
+   "link_to": "VTigerCRM Config",
+   "stats_filter": "{\"name\":[\"=\",\"vtigercrm_2022:superadmin\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "Dashboard",
+   "label": "Field Mapping",
+   "link_to": "VTigerCRM Field",
+   "type": "DocType"
+  }
+ ],
+ "title": "VTigerCRM"
+}

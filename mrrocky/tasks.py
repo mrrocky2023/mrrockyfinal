@@ -1,4 +1,4 @@
 import frappe
 
 def cron():
-    print("Hello World!")
+    frappe.msgprint("Hello World!")

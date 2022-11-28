@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-11-26 13:48:24.280638",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vtigercrm_salesorder",
+  "erpnext_sales_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "vtigercrm_salesorder",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "VTigerCRM SalesOrder",
+   "reqd": 1
+  },
+  {
+   "fieldname": "erpnext_sales_order",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "ERPNext Sales Order",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-26 13:48:24.280638",
+ "modified_by": "Administrator",
+ "module": "mrrocky",
+ "name": "VTigerCRM SalesOrder",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

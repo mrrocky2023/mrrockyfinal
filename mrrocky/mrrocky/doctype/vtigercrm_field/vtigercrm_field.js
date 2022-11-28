@@ -3,12 +3,11 @@
 
 frappe.ui.form.on('VTigerCRM Field', {
 	helpdesk: function(frm) {
-		frappe.model.with_doctype('ToDo', function() {
-			var options = $.map(frappe.get_meta('ToDo').fields,
+		frappe.model.with_doctype('Issue', function() {
+			var options = $.map(frappe.get_meta('Issue').fields,
 				function(d) {
-					console.log(d);
 					if(d.fieldname && frappe.model.no_value_type.indexOf(d.fieldtype)===-1) {
-						return d.label;
+						return d.label + '(' + (d.fieldname)  + ')';
 					}
 					return null;
 				}
@@ -16,7 +15,7 @@ frappe.ui.form.on('VTigerCRM Field', {
 			frappe.meta.get_docfield("VTigerCRM HelpDesk", "erpnext_issue", frm.docname).options = options.join("\n");
 		});
 		return frappe.call({
-			method: "getFields",
+			method: "get_fields",
 			args: {module:'HelpDesk'},
 			doc: cur_frm.doc,
 			callback: function(data) {
@@ -29,48 +28,50 @@ frappe.ui.form.on('VTigerCRM Field', {
 	},
 	contacts: function(frm) {
 		frappe.model.with_doctype('Contact', function() {
-			var options = $.map(frappe.get_meta('Issue').fields,
+			var options = $.map(frappe.get_meta('Contact').fields,
 				function(d) {
-					console.log(d);
 					if(d.fieldname && frappe.model.no_value_type.indexOf(d.fieldtype)===-1) {
-						return d.label;
+						console.log(d);
+						return d.label + '(' + (d.fieldname)  + ')';
 					}
 					return null;
 				}
 			)
-			frappe.meta.get_docfield("VTigerCRM HelpDesk", "erpnext_issue", frm.docname).options = options.join("\n");
+			frappe.meta.get_docfield("VTigerCRM Contact", "erpnext_contact", frm.docname).options = options.join("\n");
 		});
 		return frappe.call({
-			method: "getFields",
+			method: "get_fields",
+			args: {module:'Contacts'},
 			doc: cur_frm.doc,
 			callback: function(data) {
 				if(data.message) {
 					let options = data.message;
-					frappe.meta.get_docfield("VTigerCRM HelpDesk", "vtigercrm_helpdesk", frm.docname).options = options.join("\n");
+					frappe.meta.get_docfield("VTigerCRM Contact", "vtigercrm_contact", frm.docname).options = options.join("\n");
 				}
 			}
 		});
 	},
 	salesorder: function(frm) {
-		frappe.model.with_doctype('SalesOrder', function() {
-			var options = $.map(frappe.get_meta('SalesOrder').fields,
+		frappe.model.with_doctype('Sales Order', function() {
+			var options = $.map(frappe.get_meta('Sales Order').fields,
 				function(d) {
-					console.log(d);
 					if(d.fieldname && frappe.model.no_value_type.indexOf(d.fieldtype)===-1) {
-						return d.label;
+						return d.label + '(' + (d.fieldname)  + ')';
 					}
 					return null;
 				}
 			)
-			frappe.meta.get_docfield("VTigerCRM HelpDesk", "erpnext_issue", frm.docname).options = options.join("\n");
+			console.log(options.join("\n"));
+			frappe.meta.get_docfield("VTigerCRM SalesOrder", "erpnext_sales_order", frm.docname).options = options.join("\n");
 		});
 		return frappe.call({
-			method: "getFields",
+			method: "get_fields",
+			args: {module:'SalesOrder'},
 			doc: cur_frm.doc,
 			callback: function(data) {
 				if(data.message) {
 					let options = data.message;
-					frappe.meta.get_docfield("VTigerCRM HelpDesk", "vtigercrm_helpdesk", frm.docname).options = options.join("\n");
+					frappe.meta.get_docfield("VTigerCRM SalesOrder", "vtigercrm_salesorder", frm.docname).options = options.join("\n");
 				}
 			}
 		});
