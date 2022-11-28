@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestVTigerCRMConfig(FrappeTestCase):
+class TestVtigerCRMSettings(FrappeTestCase):
 	pass

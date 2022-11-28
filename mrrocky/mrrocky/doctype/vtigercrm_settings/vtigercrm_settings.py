@@ -1,4 +1,4 @@
-# Copyright (c) 2022, l and contributors
+# Copyright (c) 2022, Jorge Devia and contributors
 # For license information, please see license.txt
 
 # import frappe
@@ -9,10 +9,7 @@ from hashlib import md5
 from datetime import datetime
 from urllib.parse import urlencode
 
-class VTigerCRMConfig(Document):
-	def autoname(self):
-		self.name = self.path + ':' + self.username
-
+class VtigerCRMSettings(Document):
 	def on_update(self):
 		token: str
 		values = {'operation': 'getchallenge', 'username': self.username}
@@ -20,7 +17,7 @@ class VTigerCRMConfig(Document):
 		url = 'http://' + self.host + '/' + self.path + '/webservice.php?' + params
 		response = requests.get(url)
 		token = response.json()['result']['token']
-		tempkey = (token + self.accesskey).encode('utf-8')
+		tempkey = (token + 'MFaeyxCMTmRrUZiE').encode('utf-8')
 		key = md5(tempkey)
 		tokenizedAccessKey = key.hexdigest()
 		values['accessKey'] = tokenizedAccessKey
@@ -35,6 +32,7 @@ class VTigerCRMConfig(Document):
 			'Cache-Control': "no-cache"
 		}
 		response = requests.request("POST", url, data=payload, headers=headers)
+		print(response.json())
 		if response.json()['success'] == True:
 			self.sessionname = response.json()['result']['sessionName']
 		else:

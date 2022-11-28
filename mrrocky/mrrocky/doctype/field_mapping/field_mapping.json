@@ -1,36 +1,76 @@
 {
+ "_assign": "[\"Administrator\"]",
  "actions": [],
- "autoname": "autoincrement",
- "creation": "2022-11-24 11:32:18.845595",
+ "allow_rename": 1,
+ "creation": "2022-11-28 17:11:55.226216",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "config",
-  "column_break_2",
   "enabled",
-  "scheduler",
-  "section_break_1",
+  "column_break_2",
+  "schedule",
+  "section_break_4",
   "helpdesk",
-  "column_break_3",
+  "column_break_6",
   "contacts",
-  "column_break_5",
+  "column_break_8",
   "salesorder",
-  "section_break_3",
+  "section_break_10",
   "helpdesk_fields",
   "contacts_fields",
   "salesorder_fields"
  ],
  "fields": [
   {
-   "fieldname": "config",
-   "fieldtype": "Link",
-   "label": "Config",
-   "options": "VTigerCRM Config",
-   "reqd": 1
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
   },
   {
-   "fieldname": "section_break_3",
+   "fieldname": "column_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enabled == true",
+   "fieldname": "schedule",
+   "fieldtype": "Duration",
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "helpdesk",
+   "fieldtype": "Check",
+   "label": "HelpDesk"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "contacts",
+   "fieldtype": "Check",
+   "label": "Contacts"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "salesorder",
+   "fieldtype": "Check",
+   "label": "SalesOrder"
+  },
+  {
+   "fieldname": "section_break_10",
    "fieldtype": "Section Break"
   },
   {
@@ -39,27 +79,6 @@
    "fieldtype": "Table",
    "label": "HelpDesk Fields",
    "options": "VTigerCRM HelpDesk"
-  },
-  {
-   "default": "0",
-   "fieldname": "helpdesk",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "HelpDesk"
-  },
-  {
-   "default": "0",
-   "fieldname": "contacts",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Contacts"
-  },
-  {
-   "default": "0",
-   "fieldname": "salesorder",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "SalesOrder"
   },
   {
    "depends_on": "eval:doc.contacts == true",
@@ -74,54 +93,23 @@
    "fieldtype": "Table",
    "label": "SalesOrder Fields",
    "options": "VTigerCRM SalesOrder"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_5",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "scheduler",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Scheduler"
-  },
-  {
-   "fieldname": "section_break_1",
-   "fieldtype": "Section Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "enabled",
-   "fieldtype": "Check",
-   "label": "Enabled"
   }
  ],
  "index_web_pages_for_search": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2022-11-26 18:30:38.061558",
+ "modified": "2022-11-28 17:24:13.952892",
  "modified_by": "Administrator",
  "module": "mrrocky",
- "name": "VTigerCRM Field",
- "naming_rule": "Autoincrement",
+ "name": "Field Mapping",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
-   "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1
@@ -129,5 +117,8 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

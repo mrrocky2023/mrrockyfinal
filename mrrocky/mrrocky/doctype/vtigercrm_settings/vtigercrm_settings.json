@@ -1,6 +1,8 @@
 {
  "actions": [],
- "creation": "2022-11-23 10:19:34.069269",
+ "allow_rename": 1,
+ "autoname": "format:{path}:{username}",
+ "creation": "2022-11-28 09:40:58.338172",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -17,41 +19,15 @@
  ],
  "fields": [
   {
-   "fieldname": "username",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Username",
-   "reqd": 1
-  },
-  {
-   "fieldname": "accesskey",
-   "fieldtype": "Password",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "label": "Access Key",
-   "reqd": 1
-  },
-  {
-   "fieldname": "sessionname",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Session Name"
-  },
-  {
    "fieldname": "host",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
    "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "Host",
-   "reqd": 1,
-   "search_index": 1
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "path",
@@ -61,38 +37,55 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_4",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "accesskey",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Access Key",
+   "reqd": 1
+  },
+  {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sessionname",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Session Name"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_virtual": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2022-11-26 18:20:27.060483",
+ "modified": "2022-11-28 10:25:56.086407",
  "modified_by": "Administrator",
  "module": "mrrocky",
- "name": "VTigerCRM Config",
+ "name": "VtigerCRM Settings",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
-   "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1

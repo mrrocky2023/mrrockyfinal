@@ -12,10 +12,10 @@ from hashlib import md5
 from datetime import datetime
 from urllib.parse import urlencode
 
-class VTigerCRMField(Document):
+class FieldMapping(Document):
 	@frappe.whitelist()
 	def get_fields(self, module):
-		config = get_doc('VTigerCRM Config', self.config)
+		config = get_doc('VtigerCRM Settings')
 		config.on_update()
 		values = {'sessionName': config.sessionname, 'operation': 'describe', 'elementType': module}
 		params = urlencode(values)
@@ -36,7 +36,7 @@ class VTigerCRMField(Document):
         #values = {'operation': 'sync', 'sessionName': self.values['sessionName'], 'elementType': 'Contacts', 'modifiedTime': ts-5000}
         #last_update = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 		# fieldList = "firstname,lastname"
-		config = get_doc('VTigerCRM Config', self.config)
+		config = get_doc('VtigerCRM Settings')
 		config.on_update()
 		values = {'operation': 'query', 'sessionName': config.sessionname}
 		params = urlencode(values)
@@ -46,13 +46,13 @@ class VTigerCRMField(Document):
 		limit = 100
 		while True:
 			query = {'query': "SELECT " + ','.join(fieldModule) + " FROM " + module + " ORDER BY modifiedtime DESC LIMIT " + str(i + 1) + "," + str(i + 100) + ";"}
-			url = url + "&" + urlencode(query)
-			response = requests.get(url)
-			print(response.json())
+			url_query = url + "&" + urlencode(query)
+			response = requests.get(url_query)
 			limit = len(response.json()['result'])
 			if limit == 0:
 				break
 			else:
+				print("i ------------------------------------> " + str(i))
 				response.raise_for_status()
 				if response.status_code != 204:
 					results = response.json()['result']
@@ -62,13 +62,12 @@ class VTigerCRMField(Document):
 						for i in range(0, len(fieldDocType)):
 							listDocType[fieldDocType[i - 1]] = result[fieldModule[i - 1]]
 						print(listDocType)
-						self.create_doctype(listDocType)
+						self.create_contact(listDocType)
+				break
 
-	
-	def create_doctype(self, listDocType):
-		doc = get_doc(listDocType)
-		doc.insert()
-		doc.submit()
+	@frappe.whitelist()
+	def create_contact(self, listDocType):
+		get_doc(listDocType).insert(ignore_permissions=True)
 
 	def on_update(self):
 		if self.enabled:
@@ -79,7 +78,7 @@ class VTigerCRMField(Document):
 				lfContact_EN.append(relationField.erpnext_contact[relationField.erpnext_contact.find('(') + 1:len(relationField.erpnext_contact)-1])
 			self.get_module_vtigercrm('Contacts', lfContact_EN, lfContact_VT)
 				#results = self.get_module_vtigercrm('Contacts', fieldList)
-			if self.scheduler:
+			if self.schedule:
 				"""event = frappe.get_doc(
 					{
 						"doctype": "Event",

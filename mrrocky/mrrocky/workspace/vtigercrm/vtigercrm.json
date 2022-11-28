@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"VtigerCRM Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Field Mapping\",\"col\":3}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"VtigerCRM Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vtigercrm Field\",\"col\":3}}]",
  "creation": "2022-11-26 16:26:35.777030",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -24,16 +24,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Fields Map",
+   "label": "Field Mapping",
    "link_count": 0,
-   "link_to": "VTigerCRM Field",
+   "link_to": "Field Mapping",
    "link_type": "DocType",
    "onboard": 0,
    "only_for": "Colombia",
    "type": "Link"
   }
  ],
- "modified": "2022-11-27 20:23:41.784946",
+ "modified": "2022-11-28 17:27:00.400178",
  "modified_by": "Administrator",
  "module": "mrrocky",
  "name": "VTigerCRM",
@@ -46,17 +46,16 @@
  "shortcuts": [
   {
    "color": "Grey",
-   "doc_view": "Dashboard",
+   "doc_view": "New",
    "label": "VtigerCRM Settings",
-   "link_to": "VTigerCRM Config",
-   "stats_filter": "{\"name\":[\"=\",\"vtigercrm_2022:superadmin\"]}",
+   "link_to": "VtigerCRM Settings",
    "type": "DocType"
   },
   {
    "color": "Grey",
-   "doc_view": "Dashboard",
+   "doc_view": "List",
    "label": "Field Mapping",
-   "link_to": "VTigerCRM Field",
+   "link_to": "Field Mapping",
    "type": "DocType"
   }
  ],
