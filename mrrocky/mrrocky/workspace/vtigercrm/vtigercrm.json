@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"VtigerCRM Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vtigercrm Field\",\"col\":3}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"VtigerCRM Settings\",\"col\":3}}]",
  "creation": "2022-11-26 16:26:35.777030",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -15,7 +15,7 @@
    "is_query_report": 0,
    "label": "Config",
    "link_count": 0,
-   "link_to": "VTigerCRM Settings",
+   "link_to": "VtigerCRM Settings",
    "link_type": "DocType",
    "onboard": 0,
    "only_for": "Colombia",
@@ -33,7 +33,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-11-28 17:27:00.400178",
+ "modified": "2022-11-28 19:45:58.026621",
  "modified_by": "Administrator",
  "module": "mrrocky",
  "name": "VTigerCRM",
@@ -49,13 +49,6 @@
    "doc_view": "New",
    "label": "VtigerCRM Settings",
    "link_to": "VtigerCRM Settings",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Field Mapping",
-   "link_to": "Field Mapping",
    "type": "DocType"
   }
  ],
