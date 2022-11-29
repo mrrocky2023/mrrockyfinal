@@ -63,8 +63,15 @@ app_license = "MIT"
 # Installation
 # ------------
 
-# before_install = "mrrocky.install.before_install"
-# after_install = "mrrocky.install.after_install"
+# setup wizard
+#setup_wizard_requires = "assets/erpnext/js/setup_wizard.js"
+#setup_wizard_stages = "erpnext.setup.setup_wizard.setup_wizard.get_setup_stages"
+#setup_wizard_test = "erpnext.setup.setup_wizard.test_setup_wizard.run_setup_wizard_test"
+
+#before_install = "erpnext.setup.install.check_setup_wizard_not_completed"
+#after_install = "erpnext.setup.install.after_install"
+
+#boot_session = "erpnext.startup.boot.boot_session"
 
 # Uninstallation
 # ------------

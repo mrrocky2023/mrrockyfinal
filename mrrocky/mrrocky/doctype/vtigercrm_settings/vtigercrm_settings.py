@@ -10,7 +10,7 @@ from datetime import datetime
 from urllib.parse import urlencode
 
 class VtigerCRMSettings(Document):
-	def on_update(self):
+	def get_sessionname(self):
 		token: str
 		values = {'operation': 'getchallenge', 'username': self.username}
 		params = urlencode(values)

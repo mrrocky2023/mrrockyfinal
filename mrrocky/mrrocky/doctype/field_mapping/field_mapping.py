@@ -7,7 +7,6 @@ import frappe
 from frappe import get_doc, db, msgprint, get_meta
 import requests
 from json import dumps
-from numpy import array
 from hashlib import md5
 from datetime import datetime
 from urllib.parse import urlencode
@@ -16,7 +15,7 @@ class FieldMapping(Document):
 	@frappe.whitelist()
 	def get_fields(self, module):
 		config = get_doc('VtigerCRM Settings')
-		config.on_update()
+		config.get_sessionname()
 		values = {'sessionName': config.sessionname, 'operation': 'describe', 'elementType': module}
 		params = urlencode(values)
 		url = 'http://' + config.host + '/' + config.path + '/webservice.php?' + params
