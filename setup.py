@@ -4,12 +4,12 @@ with open("requirements.txt") as f:
 	install_requires = f.read().strip().split("\n")
 
 # get version from __version__ variable in mrrocky/__init__.py
-from mrrocky import __version__ as version
+from vtigercrm import __version__ as version
 
 setup(
-	name="mrrocky",
+	name="vtigercrm",
 	version=version,
-	description="test selenium",
+	description="vtigercrm",
 	author="l",
 	author_email="l",
 	packages=find_packages(),
