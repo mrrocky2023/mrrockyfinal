@@ -7,9 +7,9 @@ with open("requirements.txt") as f:
 from vtigercrm import __version__ as version
 
 setup(
-	name="vtigercrm",
+	name="mrrocky",
 	version=version,
-	description="vtigercrm",
+	description="mrrocky",
 	author="l",
 	author_email="l",
 	packages=find_packages(),
